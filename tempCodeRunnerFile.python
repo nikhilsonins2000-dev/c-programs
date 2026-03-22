@@ -1,0 +1,29 @@
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+    
+    def drive(self):
+        return f"The {self.color} {self.brand} is driving"
+    
+    def stop(self):
+        return f"The {self.color} {self.brand} stopped"
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, color, battery):
+        super().__init__(brand, color)
+        self.battery = battery
+    
+    def charge(self):
+        return f"Charging {self.brand} battery to {self.battery}%"
+
+
+# Usage
+car1 = Car("Toyota", "red")
+print(car1.drive())
+print(car1.stop())
+
+electric_car = ElectricCar("Tesla", "blue", 100)
+print(electric_car.drive())
+print(electric_car.charge())
